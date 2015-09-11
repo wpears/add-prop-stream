@@ -1,10 +1,10 @@
-##add prop stream
+##add properties stream
 
 ###Usage
 
-#### addProp(key, value) or addProp(obj)
+#### addProps(key, value) or addProps(obj)
   - all key/value pairs of obj get copied over
-#### objectStream.pipe(addProp('easy', 'peasy')).pipe(objectStreamComsumer())
-#### objectStream.pipe(addProp({easy:'peasy', objects: 'work', as: 'well'}).pipe(objectStreamComsumer())
+#### objectStream.pipe(addProps('easy', 'peasy')).pipe(objectStreamComsumer())
+#### objectStream.pipe(addProps({easy:'peasy', objects: 'work', as: 'well'}).pipe(objectStreamComsumer())
 
-#### addProp.stringify(key, val) to stringify output
+#### addProps.stringify(key, val) to stringify output
