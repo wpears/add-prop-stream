@@ -43,8 +43,9 @@ function addProp(obj, key, val){
   for(var i=0; i<nested.length; i++){
     var v = nested[i];
     if(i === nested.length-1) return innerObj[v] = val
-    innerObj = obj[v];
-    if(!innerObj) innerObj = obj[v] = {};
+    var newObj = innerObj[v];
+    if(!newObj) newObj = innerObj[v] = {};
+    innerObj = newObj;
   }
 }
 

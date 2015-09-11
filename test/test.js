@@ -14,22 +14,26 @@ test('Makes streams', function(t){
 
 
 test('Adds properly', function(t){
-  t.plan(6);
+  t.plan(8);
 
   var obj = {a: 'b'};
   var obj2 = {a: 'b', c: 'd'}
   var obj3 = {a: 'b', c: 'd', e: 'f'};
+  var obj4 = {a: 'b', w: {x: {y: 'z'}}};
   var strng = new Buffer(JSON.stringify(obj))
   var strng2 = new Buffer(JSON.stringify(obj2));
   var strng3 = new Buffer(JSON.stringify(obj3));
+  var strng4 = new Buffer(JSON.stringify(obj4));
 
   var cases = [
     {fn: addProps, args: {key: null, val: null}, expected: obj, message: 'No-op with empty props'},
     {fn: addProps, args: {key: 'c', val: 'd'}, expected: obj2, message: 'Key/value'},
     {fn: addProps, args: {key: {c: 'd', e: 'f'}, val: null}, expected: obj3, message: 'Adds with mixinObject'},
+    {fn: addProps, args: {key: 'w.x.y', val: 'z'}, expected: obj4, message: 'Key/value with nested prop'},
     {fn: addProps.stringify, args: {key: null, val: null}, expected: strng, message: 'Stringified no-op with empty props'},
     {fn: addProps.stringify, args: {key: 'c', val: 'd'}, expected: strng2, message: 'Stringified key/value'},
-    {fn: addProps.stringify, args: {key: {c: 'd', e: 'f'}, val: null}, expected: strng3, message: 'Stringify adds with mixinObject'}
+    {fn: addProps.stringify, args: {key: {c: 'd', e: 'f'}, val: null}, expected: strng3, message: 'Stringify adds with mixinObject'},
+    {fn: addProps.stringify, args: {key: 'w.x.y', val: 'z'}, expected: strng4, message: 'Stringified key/value with nested prop'}
   ]
 
   cases.forEach(function(props){
