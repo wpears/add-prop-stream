@@ -1,0 +1,24 @@
+{
+  "name": "add-prop-stream",
+  "version": "0.0.1",
+  "description": "Devastatingly simple way to add properties and values to an object stream.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wpears/add-prop-stream"
+  },
+  "keywords": [
+    "stream",
+    "transform",
+    "objectMode"
+  ],
+  "author": "Wyatt Pearsall <wyatt.pearsall@cfpb.gov>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpears/add-prop-stream/issues"
+  },
+  "homepage": "https://github.com/wpears/add-prop-stream"
+}
