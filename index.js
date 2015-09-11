@@ -19,14 +19,14 @@ function makeStream(obj, key, val){
 
   if(!val && typeof key === 'object') mixinObj = key;
 
-  through(obj, function(chunk, enc, cb){
+  return through(obj, function(chunk, enc, cb){
     chunk = JSON.parse(JSON.stringify(chunk));
 
     if(mixinObj){
       Object.keys(mixinObj).forEach(function(key){
         chunk[key] = mixinObj[key];
       });
-    }else{
+    }else if(key){
       chunk[key] = val;
     }
 

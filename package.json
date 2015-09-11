@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/wpears/add-prop-stream/issues"
   },
-  "homepage": "https://github.com/wpears/add-prop-stream"
+  "homepage": "https://github.com/wpears/add-prop-stream",
+  "dependencies": {
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "isstream": "^0.1.2",
+    "stream-stats": "^0.7.0",
+    "tape": "^4.2.0"
+  }
 }
