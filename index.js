@@ -24,16 +24,28 @@ function makeStream(obj, key, val){
 
     if(mixinObj){
       Object.keys(mixinObj).forEach(function(key){
-        chunk[key] = mixinObj[key];
+        addProp(chunk, key, mixinObj[key]);
       });
     }else if(key){
-      chunk[key] = val;
+      addProp(chunk, key, val);
     }
 
     if(obj === writable) chunk = JSON.stringify(chunk);
 
     return cb(null, chunk);
   });
+}
+
+function addProp(obj, key, val){
+  var innerObj = obj;
+  var nested = key.split('.');
+
+  for(var i=0; i<nested.length; i++){
+    var v = nested[i];
+    if(i === nested.length-1) return innerObj[v] = val
+    innerObj = obj[v];
+    if(!innerObj) innerObj = obj[v] = {};
+  }
 }
 
 module.exports = addProps;
