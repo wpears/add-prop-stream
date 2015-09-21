@@ -1,6 +1,6 @@
-##add properties stream
+## add properties stream
 
-###Usage
+### Usage
 
 `addProps(key, value)` or `addProps(obj)`
   - all key/value pairs of obj get copied over
