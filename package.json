@@ -1,6 +1,6 @@
 {
   "name": "add-props-stream",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Devastatingly simple way to add properties and values to an object stream.",
   "main": "index.js",
   "scripts": {
